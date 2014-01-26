@@ -27,13 +27,31 @@
 	      
 	  
 </head>
-	<body>
-		<p><input type="emailAddress" class="span3" placeholder="Email Address"></p>
-		<p><input type="password" class="span3" placeholder="Password"></p>
-	
-	
-	
+	<body><center>
 		<script src="https://code.jquery.com/jquery.js"></script>
 		 <script src="static/js/bootstrap.min.js"></script>
+		<div id="fb-root">
+			<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+		<div id= "login form">
+		<p><input type="emailAddress" class="span3" placeholder="Email Address"></p>
+		<p><input type="password" class="span3" placeholder="Password"></p>
+	    <p><input type="submit" class="btn btn-primary btn-large" value="Order Now"></p>
+		<p><a href="login.html" class="btn btn-primary">Log In</a></p>
+	    </div>
+		</center>
 	</body>
+	<div class = "footer">
+		<div class = "row-fluid">
+	<p>© 2014 Deliveryze</p>
+	<p>All Rights Reserved.</p> 
+	<div class="fb-like" data-href="https://facebook.com/Deliveryze"   data-layout="standard" data-action="like" data-show-faces="true" data-share="true">
+	</div>
+    </div>
 	</html>
