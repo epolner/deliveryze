@@ -1,33 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
-  <style>
-  body {
-          font-family: 'Raleway', serif;
-          font-size: 19px;
-        }
-        .header {
-            margin-bottom: 10px;
-        }
-        .footer {
-            text-align: center;
-            font-size: .8em;
-            color: #999;
-        }
-  </style>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="logo" href="/static/img/Shit Deliveryze Logo.jpg">
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
-       <link rel="stylesheet" href="/static/css/font-awesome.min.css">
-       <link rel="stylesheet" href="/static/css/style.css">
-	   <script src="bootstrap-3.0.0/assets/js/html5shiv.js"></script>  
-	   <script src="bootstrap-3.0.0/assets/js/respond.min.js"></script>  
-	   <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-	      
-	  
-</head>
-	<body><center>
+{% extends "base.html" %}
+{% block container %}
+	<center>
 		    <p><input type="firstname" class="span3" placeholder="First Name"></p>
 			<p><input type="lastname" class="span3" placeholder="Last Name"></p>
 			<p><input type="addressLine1" class="span3" placeholder="Address Line 1"></p>
@@ -35,6 +8,7 @@
 			<p><input type="city" class="span3" placeholder="City"></p>
 			<p><input type="state" class="span3" placeholder="State"></p>
 			<p><input type="zipcode" class="span3" placeholder="ZIP"></p>
+			<p><input type="phoneNumber"class="span3" placeholder="Phone Number"></p>
 			<p>Check one: </p>
 			<label class="checkbox">  
 			    <input type="checkbox"> Credit </label>	
@@ -43,11 +17,11 @@
 			<p><input type="cardNumber" class="span3" placeholder="Card Number">
 			<input type="CVV" class="span3" placeholder="CVV"></p>
 	
-			<p><input type="submit" class="btn btn-primary btn-large" value="Put in my order!"/></p>
+			<p><a href="processing.html" input type="submit" class="btn btn-primary btn-large" value="Put in my order!"/></p>
 	
 	
 		</center>
+		
 		<script src="https://code.jquery.com/jquery.js"></script>
 		 <script src="static/js/bootstrap.min.js"></script>
-	</body>
-	</html>
+{% block container %}
