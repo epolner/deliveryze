@@ -1,26 +1,27 @@
 {% extends "base.html" %}
 {% block container %}
 	<center>
-		    <p><input type="firstname" class="span3" placeholder="First Name"></p>
-			<p><input type="lastname" class="span3" placeholder="Last Name"></p>
-			<p><input type="addressLine1" class="span3" placeholder="Address Line 1"></p>
-			<p><input type="addressLine2" class="span3" placeholder="Address Line 2"></p>
-			<p><input type="city" class="span3" placeholder="City"></p>
-			<p><input type="state" class="span3" placeholder="State"></p>
-			<p><input type="zipcode" class="span3" placeholder="ZIP"></p>
-			<p><input type="phoneNumber"class="span3" placeholder="Phone Number"></p>
-			<p>Check one: </p>
-			<label class="checkbox">  
-			    <input type="checkbox"> Credit </label>	
-			<label class="checkbox">
-				<input type="checkbox"> Debit </label>
-			<p><input type="cardNumber" class="span3" placeholder="Card Number">
-			<input type="CVV" class="span3" placeholder="CVV"></p>
-	
-			<p><a href="processing.html" input type="submit" class="btn btn-primary btn-large" value="Put in my order!"/></p>
-	
-	
-		</center>
+		<p>
+		    <input type="firstname" class="span3" placeholder="First Name">
+			<input type="lastname" class="span3" placeholder="Last Name">
+		</p>
+		<p>
+			<input type="address" class="span3" placeholder="Address">
+		    <input type="apartmentNumber" class="span1" placeholder="Apt #">
+	    </p>
+		<p>
+			<input type="city" class="span3" placeholder="City">
+			<input type="state" class="span3" placeholder="State">
+		</p>
+		<p> <input type="zipcode" class="span3" placeholder="ZIP">
+			<input type="phoneNumber"class="span3" placeholder="Phone Number"></p>
+		<p>
+			<input type="cardNumber" class="span3" placeholder="Card Number">
+			<input type="CVV" class="span3" placeholder="CVV">
+		</p>
+				
+		<input type="submit" class="btn btn-primary btn-large" value="Put in my order!"/></p>
+	    </center>
 		
 		<script src="https://code.jquery.com/jquery.js"></script>
 		 <script src="static/js/bootstrap.min.js"></script>
