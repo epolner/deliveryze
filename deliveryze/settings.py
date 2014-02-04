@@ -1,6 +1,6 @@
 # Django settings for deliveryze project.
 import os
-import settings_local
+from settings_local import *
 
 PROJECT_PATH = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
 
