@@ -2,12 +2,12 @@
 {% block container %}
 	<center>
 		<div class="container">
-		<div class="row voffset">
+		<div class="row offset4">
 		<h1>We're done!</h1>
 		<p>your total is</p>
 			{{total}}
                         <p><a href="{% url 'done' %} " input type="submit" class="btn btn-success btn-large"><i class="icon-white icon-ok"></i> Place my order</a><p>
-		<p><a href="homepage.html" class="btn btn-danger"><i class="icon-white icon-remove"></i> I changed my mind.</a></p>
+		<p><a href="{%url 'homepage' %}" class="btn btn-danger"><i class="icon-white icon-remove"></i> I changed my mind.</a></p>
 		
 		
 	</div>
