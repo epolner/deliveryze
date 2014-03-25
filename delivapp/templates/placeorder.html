@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block container %}
+	<center>
+		<div class="container">
+		<div class="row offset4">
+		<h1>We're done!</h1>
+		<p>Your total is</p>
+			{{total}}
+<p><a class="btn" href="{% url 'done' %} " input type="submit" class="btn btn-success btn-large"><i class="icon-white icon-ok"></i> Place my order</a><p>
+		<p><a class="btn" href="{%url 'homepage' %}"><i class="icon-white icon-remove"></i> I changed my mind.</a></button></p>
+		
+		
+	</div>
+	
+	</div>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	 <script src="static/js/bootstrap.min.js"></script>
+{% endblock container %}
