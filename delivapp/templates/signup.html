@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block container %}
+	
 	<center>
+	<form action={% url 'processing' %} method="post">{% csrf_token %}
 		<p>
 		    <input type="firstname" class="span3" placeholder="First Name">
 			<input type="lastname" class="span3" placeholder="Last Name">
@@ -13,7 +15,6 @@
 		<p> <input type="email" class="span3" placeholder="Email">
 			<input type="phoneNumber"class="span3" placeholder="Phone Number"></p>
 	
-		<form action={% url 'processing' %} method="post">{% csrf_token %}
 		<p> <button class="btn btn-large btn-primary" type="submit">Continue</button></p>
 	    </center>
 		
