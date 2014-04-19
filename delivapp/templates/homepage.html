@@ -13,13 +13,15 @@
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>
 		<div id= "login form">
-		<center>
-		<!--<p><input type="emailAddress" class="span3" placeholder="Email Address"></p>
-                <p><input type="password" class="span3" placeholder="Password"></p>-->
-		<p><input type="text" class="span3" placeholder="What food do you want?"></p>
-		<p><input type="text" class="span3" placeholder="From where?"></p>
-	    <p><input type="submit" class="btn btn-primary btn-large" value="Order Now"></p>
-            <p><a href="{% url 'login' %}" class="btn btn-primary">Log In</a></p>
-	    </div>
+                  <center>
+                    <form action={% url 'processing' %} method="post">{% csrf_token %}
+                      <!--<p><input type="emailAddress" class="span3" placeholder="Email Address"></p>
+                      <p><input type="password" class="span3" placeholder="Password"></p>-->
+                      <p><input type="text" class="span3" placeholder="What food do you want?"></p>
+                      <p><input type="text" class="span3" placeholder="From where?"></p>
+                      <p><input type="submit" class="btn btn-primary btn-large" value="Order Now"></p>
+                    </form>
+                    <p><a href="{% url 'login' %}" class="btn btn-primary">Log In</a></p>
+                  </div>
 		</center>
 {% endblock container %}
