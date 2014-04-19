@@ -6,14 +6,15 @@
 			<input type="lastname" class="span3" placeholder="Last Name">
 		</p>
 		<p>
-			<input type="address" class="span3" placeholder="Address (Chicago Only!)">
+			<input type="address" class="span3" placeholder="Address (Chicago Only)">
 		    <input type="zipcode" class="span3" placeholder="ZIP">
 	    </p>
 		
 		<p> <input type="email" class="span3" placeholder="Email">
 			<input type="phoneNumber"class="span3" placeholder="Phone Number"></p>
-				
-		<button class="btn btn-large btn-primary" type="submit">Continue</button></p>
+	
+		<form action={% url 'processing' %} method="post">{% csrf_token %}
+		<p> <button class="btn btn-large btn-primary" type="submit">Continue</button></p>
 	    </center>
 		
 		<script src="https://code.jquery.com/jquery.js"></script>
