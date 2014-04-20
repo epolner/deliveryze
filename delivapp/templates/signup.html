@@ -2,21 +2,22 @@
 {% block container %}
 	
 	<center>
-	<form action={% url 'processing' %} method="post">{% csrf_token %}
+          <form action="" method="post">{% csrf_token %}
 		<p>
-		    <input type="firstname" class="span3" placeholder="First Name">
-			<input type="lastname" class="span3" placeholder="Last Name">
+		    <input name="firstname" class="span3" placeholder="First Name">
+                    <input name="lastname" class="span3" placeholder="Last Name">
 		</p>
 		<p>
-			<input type="address" class="span3" placeholder="Address (Chicago Only)">
-		    <input type="zipcode" class="span3" placeholder="ZIP">
+                    <input name="address" class="span3" placeholder="Address (Chicago Only)">
+		    <input name="zipcode" class="span3" placeholder="ZIP">
 	    </p>
 		
-		<p> <input type="email" class="span3" placeholder="Email">
-			<input type="phoneNumber"class="span3" placeholder="Phone Number"></p>
+		<p> <input name="email" class="span3" placeholder="Email">
+                    <input name="phoneNumber"class="span3" placeholder="Phone Number"></p>
 	
 		<p> <button class="btn btn-large btn-primary" type="submit">Continue</button></p>
-	    </center>
+            </form>
+          </center>
 		
 		<script src="https://code.jquery.com/jquery.js"></script>
 		 <script src="static/js/bootstrap.min.js"></script>
