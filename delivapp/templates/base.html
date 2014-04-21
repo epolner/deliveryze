@@ -1,49 +1,131 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html dir="ltr" lang="en-US"><!--<![endif]-->
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div class=title>
-	{% block title %}<center><img src="http://blog.flamingtext.com/blog/2014/02/10/flamingtext_com_1391996966_933917473.png" alt=Deliveryze></center>
-	{% endblock title %}
-	</div>
-	 <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	{% block style %}
-	<link rel="stylesheet" href="/static/css/style.css">
-	<script src="bootstrap-3.0.0/assets/js/html5shiv.js"></script>  
-    <script src="bootstrap-3.0.0/assets/js/respond.min.js"></script>  
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-	<style>
-	.title{
-		padding-top: 50px;
-	}
-	.body{
-			font-family: 'Raleway', serif;
-			padding-top: 65px;
-		}
-		.footer {
-			text-align: center;
-			font-family: 'Raleway', serif;
-			font-size: .8em;
-		}
-	
-	</style>
-	{% endblock style %}
-</head>
 
-<div class=body>
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Deliveryze - Take On Your Takeout</title>
+	<meta name="description" content="Deliveryze, order takeout delivered from anywhere." />
+
+	<!-- Google Web Fonts
+  ================================================== -->
+	<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Bree+Serif|Muli' rel='stylesheet' type='text/css'>
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS Stylesheets
+  ================================================== -->
+	<link rel="stylesheet" href="/static/css/resets.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/media-queries.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/prettyPhoto.css" type="text/css" media="screen"/>
+
+	<!--[if lt IE 9]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		<script src="/static/js/selectivizr.min.js"></script>
+	<![endif]-->
+
+	<!-- Javascript
+  ================================================== -->
+	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+	<!-- <script src="/static/js/supersized.js"></script> -->
+	<script src="/static/js/tweet.js"></script>
+	<!-- <script src="/static/js/countdown.min.js"></script> -->
+	<!-- <script src="/static/js/prettyphoto.js"></script> -->
+
+	<script type="text/javascript">
+		$(function(){
+			initialize();
+		});
+	</script>
+
+</head>
+<body>
+
+	<header id="head">
+
+		<div class="inner">
+			<a href="#" class="logotext transparent"><h1>Deliveryze</h1></a>
+			<div class="details left">
+
 	{% block container %}
-    <script src="http://code.jquery.com/jquery.js"></script>
-      <script src="js/bootstrap.min.js"></script>
 	{% endblock container %}
-</div>
-		
-		{% block footer %}
-		<div class= "footer">
-		<p>© 2014 Deliveryze</p>
-		<p>All Rights Reserved.</p> 
-		<p><a href={% url 'logout' %} class="btn btn-primary"input type="submit"> Log Out</a></p>
-		<div class="fb-like" data-href="https://facebook.com/Deliveryze"   data-layout="standard" data-action="like" data-show-faces="true" data-share="true">
-		
+
+<!--
+				<div class="message">
+					<p class="large">Take On Your Takeout</p>
+					<p class="medium">Get takeout food delivered from anywhere in Chicago - coming Spring 2013 to Hyde Park</p>
+					<p class="small">Ever want food delivered from somewhere that doesn't deliver to Hyde Park? Pre-register and have the chance to be one of the first to use Deliveryze. Test runs exclusively for early subscribers start soon.</p>
+				</div>
+
+
+				<form class="newsletter" id="subscribe">
+					<input type="email" id="email" name="email" class="email" placeholder="Enter your email..." /> <button>Feed me!</button>
+					<p class="note">We won't spam you. Pinky swear.</p>
+				</form>
+--!>
+			</div>
 		</div>
-	    </div>
-		{% endblock footer %}
+
+		<!-- <div id="progress-back" class="load-item"><div id="progress-bar"></div></div> -->
+		<!-- <div id="countdown"></div> -->
+		<div class="contact_map" id="contact">
+			<div id="canvas_holder" style="height:100%;width:100%">
+				<div id="map_canvas" style="height:100%;width:100%"></div>
+			</div>
+		</div>
+
+	</header>
+
+	<section class="body">
+
+		<div class="inner">
+
+				<ul class="social">
+					<!--
+					<li class="icq"><a href="#">ICQ</a></li>
+					<li class="vkontakte-rect"><a href="#">Vkontakte</a></li>
+					<li class="odnoklassniki"><a href="#">Odnoklassniki</a></li>
+					<li class="friendfeed"><a href="#">Friendfeed</a></li>
+					<li class="blogger"><a href="#">Blogger</a></li>
+					<li class="jabber"><a href="#">Jabber</a></li>
+					<li class="picasa"><a href="#">Picasa</a></li>
+					<li class="wordpress"><a href="#">Wordpress</a></li>
+					<li class="deviantart"><a href="#">Deviantart</a></li>
+					<li class="tumbler"><a href="#">Tumbler</a></li>
+					<li class="youtube"><a href="#">Youtube</a></li>
+					<li class="twitter"><a href="#">Twitter</a></li>
+					<li class="vimeo"><a href="#">Vimeo</a></li>
+					<li class="skype"><a href="#">skype</a></li>
+					<li class="git"><a href="#">Git</a></li>
+					<li class="linkedin"><a href="#">Linkedin</a></li>
+					<li class="lastfm"><a href="#">Lastfm</a></li>
+					<li class="flickr"><a href="#">Flickr</a></li>
+					-->
+					<li class="facebook"><a href="https://www.facebook.com/Deliveryze">Facebook</a></li>
+					<div class="copyright">
+					<p>&copy; 2013 Deliveryze</p>
+					<p>All Rights Reserved.</p>
+				</div>
+				</ul>
+
+				<!--<div class="tweet"></div>-->
+
+				
+
+		</div>
+	</section>
+
+	<script src="/static/js/core.js"></script>
+</body>
+</html>

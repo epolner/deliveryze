@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block container %}
-	
+<!--	
 		<script src="https://code.jquery.com/jquery.js"></script>
 		 <script src="static/js/bootstrap.min.js"></script>
 		<div id="fb-root">
@@ -22,5 +22,20 @@
                     <p><a href="{% url 'login' %}" class="btn btn-primary">Log In</a></p>
                   </center>
                 </div>
+                --!>
+
+				<div class="message">
+					<p class="large">Take On Your Takeout</p>
+					<p class="medium">Get takeout food delivered from anywhere in Chicago - coming Spring 2013 to Hyde Park</p>
+					<p class="small">Ever want food delivered from somewhere that doesn't deliver to Hyde Park? Pre-register and have the chance to be one of the first to use Deliveryze. Test runs exclusively for early subscribers start soon.</p>
+				</div>
+
+
+				<form class="newsletter" id="subscribe">
+					<input type="text" id="food" name="food" class="email" placeholder="What food do you want?" />
+                                        <input type="text" id="restaurant" name="restaurant" class="email" placeholder="From where?" /> <br />
+                                        <button>Feed me!</button>
+					<p class="note">Hope you're hungry!</p>
+				</form>
 
 {% endblock container %}
