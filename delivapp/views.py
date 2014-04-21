@@ -1,6 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib import auth
+from .forms import UserForm, DeliveryzeUserForm
 
 def index(request):
   return HttpResponse("Hello, world. You're at the poll index.")
@@ -11,7 +12,16 @@ def homepage(request):
 
 def signup(request):
   print request.POST
-  return render(request, 'signup.html', {})
+  uform = UserForm(data = request.POST)
+  dform = DeliveryzeUserForm(data = request.POST)
+  if uform.is_valid() and dform.is_valid():
+    user = uform.save()
+    profile = dform.save(commit = False)
+    profile.user = user
+    profile.save()
+    #Issue a redirect
+  form_error = 'email' in request.POST
+  return render(request, 'signup.html', {'uform' : uform, 'dform' : dform, 'form_error':form_error})
 
 def login(request):
   return render(request, 'login.html', {})

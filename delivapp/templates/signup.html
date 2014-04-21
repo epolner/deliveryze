@@ -3,21 +3,18 @@
 	
 	<center>
           <form action="" method="post">{% csrf_token %}
-		<p>
-		    <input name="firstname" class="span3" placeholder="First Name">
-                    <input name="lastname" class="span3" placeholder="Last Name">
-		</p>
-		<p>
-                    <input name="address" class="span3" placeholder="Address (Chicago Only)">
-		    <input name="zipcode" class="span3" placeholder="ZIP">
-	    </p>
-		
-		<p> <input name="email" class="span3" placeholder="Email">
-                    <input name="phoneNumber"class="span3" placeholder="Phone Number"></p>
-	
-		<p> <button class="btn btn-large btn-primary" type="submit">Continue</button></p>
-            </form>
-          </center>
+            {% if form_error %}
+            <p style="color: red;">Please complete all form fields</p>
+            {% endif %}
+            {% for field in uform %}
+            <p>{{ field }}</p>
+            {% endfor %}
+            {% for field in dform %}
+            <p>{{ field }}</p>
+            {% endfor %}
+            <p> <button class="btn btn-large btn-primary" type="submit">Continue</button></p>
+          </form>
+        </center>
 		
 		<script src="https://code.jquery.com/jquery.js"></script>
 		 <script src="static/js/bootstrap.min.js"></script>
